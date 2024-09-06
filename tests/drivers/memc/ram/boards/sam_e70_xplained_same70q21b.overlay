@@ -1,0 +1,42 @@
+/**
+ * This is a fake overlay for the sam_e70_xplained-board to allow us to test that 
+ * the memc-driver will build for SAM E70-devices.
+ *
+ * The SAM E70 Xplained-board does not have external memory, so we would either need 
+ * a custom board which will not run in CI anyway, or simply fake it by overlaying 
+ * the default setup for sam_e70_xplained.
+ */
+
+#include "sam_e70_xplained_same70q21b-pinctrl.dtsi"
+
+
+/ { 
+    aliases {
+        sram-ext = &sram1;
+    };
+        
+    sram1: sram@62000000 {
+        compatible = "zephyr,memory-region", "mmio-sram";
+        device_type = "memory";
+        reg = <0x62000000 DT_SIZE_K(2048)>;
+        zephyr,memory-region = "SRAM1";
+    };
+
+};
+
+&smc {
+    status = "okay";
+    pinctrl-0 = <&smc_default>;
+    pinctrl-names = "default";
+
+    r1lv1616hsa@2 {
+        reg = <2>;
+
+        atmel,smc-write-mode = "nwe";
+        atmel,smc-read-mode = "nrd";
+        atmel,smc-setup-timing = <1 1 1 1>;
+        atmel,smc-pulse-timing = <14 14 14 14>;
+        atmel,smc-cycle-timing = <15 15>;
+        atmel,smc-bus-width = <16>;
+    };
+};

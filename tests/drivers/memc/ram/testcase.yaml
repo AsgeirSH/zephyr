@@ -20,6 +20,14 @@ tests:
     platform_allow: sam4s_xplained
     integration_platforms:
       - sam4s_xplained
+  drivers.memc.smc_sram_sam_e70:
+    tags:
+      - drivers
+      - memc
+    depends_on: memc
+    build_only: true
+    filter: dt_compat_enabled("atmel,sam-smc")
+    platform_allow: sam_e70_xplained/same70q21b
   drivers.memc.sifive_ddr:
     simulation_exclude:
       - renode

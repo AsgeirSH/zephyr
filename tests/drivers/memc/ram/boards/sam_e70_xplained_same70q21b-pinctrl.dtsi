@@ -1,0 +1,50 @@
+&pinctrl {
+    smc_default: smc_default {
+        group1 {
+            pinmux = 
+                /* Control pins */
+                <PC11A_EBI_NRD>,
+                <PC8A_EBI_NWE_NWR0>,
+                <PC18A_EBI_A0_NBS0>,
+                <PD15C_EBI_NWR1_NBS1>,
+                <PA22C_EBI_NCS2>,
+                /* Addresses */
+                <PC19A_EBI_A1>,
+                <PC20A_EBI_A2>,
+                <PC21A_EBI_A3>,
+                <PC22A_EBI_A4>,
+                <PC23A_EBI_A5>,
+                <PC24A_EBI_A6>,
+                <PC25A_EBI_A7>,
+                <PC26A_EBI_A8>,
+                <PC27A_EBI_A9>,
+                <PC28A_EBI_A10>,
+                <PC29A_EBI_A11>,
+                <PC30A_EBI_A12>,
+                <PC31A_EBI_A13>,
+                <PA18C_EBI_A14>,
+                <PA19C_EBI_A15>,
+                <PA20C_EBI_A16_BA0>,
+                <PA0C_EBI_A17_BA1>,
+                <PA1C_EBI_A18>,
+                <PA24C_EBI_A20>,
+                /* Data pins */
+                <PC0A_EBI_D0>,
+                <PC1A_EBI_D1>,
+                <PC2A_EBI_D2>,
+                <PC3A_EBI_D3>,
+                <PC4A_EBI_D4>,
+                <PC5A_EBI_D5>,
+                <PC6A_EBI_D6>,
+                <PC7A_EBI_D7>,
+                <PE0A_EBI_D8>,
+                <PE1A_EBI_D9>,
+                <PE2A_EBI_D10>,
+                <PE3A_EBI_D11>,
+                <PE4A_EBI_D12>,
+                <PE5A_EBI_D13>,
+                <PA15A_EBI_D14>,
+                <PA16A_EBI_D15>;
+        };
+    };
+};
